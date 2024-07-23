@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 function Hero() {
   return (
-    <nav className="bg-[#ed3b59] px-8 py-4">
+    <nav className="fixed top-0 left-0 right-0 bg-primary px-8 py-4 z-50">
       <div className="flex justify-between items-center">
         <div className="text-white text-2xl font-bold">
           <NavLink to="/">BIRAJ SHRESTHA</NavLink>

@@ -6,6 +6,7 @@ import Root from './components/Root';
 import About from './components/About';
 import Error from './components/Error';
 import Portfolio from './components/Portfolio';
+import './App.css';
 
 const router = createBrowserRouter ([
   {

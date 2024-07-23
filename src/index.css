@@ -10,8 +10,19 @@ h2 {
 }
 
 h3 {
-    @apply text-lg font-semibold ;
+    @apply text-lg font-semibold;
 }
+
+/* App.css */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+  }
+   
 
 @tailwind components;
 @tailwind utilities;
