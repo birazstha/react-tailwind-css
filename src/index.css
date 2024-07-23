@@ -1,28 +1,35 @@
 @tailwind base;
 
+body {
+  background-color: rgb(230, 188, 188)2f2;
+}
+
 h1 {
-    @apply text-2xl font-semibold;
+  @apply text-2xl font-semibold;
 
 }
 
 h2 {
-    @apply text-xl font-semibold;
+  @apply text-xl font-semibold;
 }
 
 h3 {
-    @apply text-lg font-semibold;
+  @apply text-lg font-semibold;
 }
 
 /* App.css */
 .no-scrollbar {
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox */
-  }
-  
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;  /* Safari and Chrome */
-  }
-   
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
+}
+
 
 @tailwind components;
 @tailwind utilities;

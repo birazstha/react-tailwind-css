@@ -5,18 +5,16 @@ export default function Home() {
     <>
       <Section>
         <div className="mt-10 2xl:mt-[150px] flex flex-col sm:flex-row items-center 2xl:justify-around justify-between">
-          <div>
+          <div className="py-4 border-1 border-red-700">
             <h1 className="mb-2">Hello, I am</h1>
             <h1 className="text-7xl mb-2 text-primary">Biraj Shrestha</h1>
             <h1 className="mb-2">Fullstack Developer</h1>
-            <p className="text-justify w-[450px]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-              repellat totam adipisci, aliquam, sint perspiciatis obcaecati
-              repellendus voluptatem velit dolore possimus eligendi atque itaque
-              reiciendis consectetur? Id sed asperiores maiores nostrum delectus
-              totam incidunt placeat, maxime tempora quae vero obcaecati quas!
-              Adipisci perspiciatis alias nesciunt fugiat molestias placeat
-              optio rem!
+            <p className="text-justify lg:w-[450px] ">
+              Worked with different nationalities and I believe in team work.
+              Have learnt to cope with pressure situations. Can handle any kind
+              of situation under pressure. Good communication skills, quick
+              learner and hardworking. Have also learned that "team work makes
+              the dream work" which is the key to success
             </p>
           </div>
 

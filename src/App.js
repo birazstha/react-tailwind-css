@@ -5,8 +5,9 @@ import Home from './components/Home';
 import Root from './components/Root';
 import About from './components/About';
 import Error from './components/Error';
-import Portfolio from './components/Portfolio';
+import Portfolio, {portfolioLoaders} from './components/Portfolio';
 import './App.css';
+import ProjectDetail, {projectDetailLoader} from './components/ProjectDetail';
 
 const router = createBrowserRouter ([
   {
@@ -14,10 +15,25 @@ const router = createBrowserRouter ([
     element: <Root />,
     errorElement: <Error />,
     children: [
-      {path: '/', element: <Home />},
-      {path: '/about', element: <About />},
-      {path: '/portfolio', element: <Portfolio />},
-      {path: '/contact-us', element: <About />},
+      {index: true, element: <Home />},
+      {path: 'about', element: <About />},
+      {
+        path: 'portfolio',
+        children: [
+          {
+            index: true,
+            element: <Portfolio />,
+            loader: portfolioLoaders,
+          },
+          {
+            path: ':id',
+            element: <ProjectDetail />,
+            id: 'project-details',
+            loader: projectDetailLoader,
+          },
+        ],
+      },
+      {path: 'contact-us', element: <About />},
     ],
   },
 ]);
