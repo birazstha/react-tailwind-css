@@ -2,21 +2,26 @@ export const menus = [
   {
     id: 1,
     title: 'Home',
-    path:'/'
+    path: '/',
   },
   {
     id: 2,
     title: 'About Us',
-    path:'/about'
+    path: '/about',
   },
   {
     id: 3,
     title: 'Portfolio',
-    path:'/portfolio'
+    path: '/portfolio',
   },
   {
     id: 3,
     title: 'Contact Us',
-    path:'/contact-us'
+    path: '/contact-us',
+  },
+  {
+    id: 4,
+    title: 'Practice Zone',
+    path: '/practice-zone',
   },
 ];

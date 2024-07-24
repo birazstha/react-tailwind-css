@@ -2,6 +2,7 @@ import { defer, json, useRouteLoaderData, Await } from "react-router";
 import Section from "./Section";
 import { Suspense } from "react";
 import ProjectDetailLoading from "./Skeleton/ProjectDetailLoading";
+import axios from "axios";
 
 export default function ProjectDetail() {
   const { project } = useRouteLoaderData("project-details");
@@ -35,15 +36,14 @@ export default function ProjectDetail() {
 }
 
 async function loadProjectDetail(projectId) {
-  const response = await fetch(
-    // `http://127.0.0.1:8000/api/projects/${projectId}`
-    `http://api.birajshrestha.com.np/api/projects/${projectId}`
-  );
-  if (!response.ok) {
-    return "error";
-  } else {
-    const resData = await response.json();
-    return resData.data;
+  try {
+    const response = await axios.get(
+      //`http://127.0.0.1:8000/api/projects/${projectId}`
+      `http://api.birajshrestha.com.np/api/projects/${projectId}`
+    );
+    return response.data.data;
+  } catch (error) {
+    throw new Error({ message: "Server Error" });
   }
 }
 

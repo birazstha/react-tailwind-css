@@ -1,4 +1,3 @@
-// src/App.js
 import React from 'react';
 import {RouterProvider, createBrowserRouter} from 'react-router-dom';
 import Home from './components/Home';
@@ -6,8 +5,8 @@ import Root from './components/Root';
 import About from './components/About';
 import Error from './components/Error';
 import Portfolio, {portfolioLoaders} from './components/Portfolio';
-import './App.css';
 import ProjectDetail, {projectDetailLoader} from './components/ProjectDetail';
+import PracticeZone from './components/PracticeZone';
 
 const router = createBrowserRouter ([
   {
@@ -34,6 +33,7 @@ const router = createBrowserRouter ([
         ],
       },
       {path: 'contact-us', element: <About />},
+      {path: 'practice-zone', element: <PracticeZone />},
     ],
   },
 ]);
