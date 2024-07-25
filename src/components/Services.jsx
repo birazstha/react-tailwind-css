@@ -25,7 +25,7 @@ export default function Services({ services }) {
             transition={{
               duration: 0.2,
               y: { type: "spring", stiffness: 60 },
-              opacity: { duration: 0.6 },
+              opacity: { duration: 0.2 },
               ease: "easeInOut",
             }}
             className="bg-primary p-5 min-h-[300px] max-h-[300px] w-80 text-white flex flex-col items-center justify-center text-center leading-loose rounded-xl"

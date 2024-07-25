@@ -1,6 +1,6 @@
 import React from 'react';
 import {RouterProvider, createBrowserRouter} from 'react-router-dom';
-import Home from './components/Home';
+import Home, {dataCountLoader} from './components/Home';
 import Root from './components/Root';
 import About from './components/About';
 import Error from './components/Error';
@@ -14,7 +14,11 @@ const router = createBrowserRouter ([
     element: <Root />,
     errorElement: <Error />,
     children: [
-      {index: true, element: <Home />},
+      {
+        index: true,
+        element: <Home />,
+        loader: dataCountLoader,
+      },
       {path: 'about', element: <About />},
       {
         path: 'portfolio',

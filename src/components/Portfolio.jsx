@@ -6,13 +6,16 @@ import SkeletonLoading from "./SkeletonLoading";
 import axios from "axios";
 
 export default function Portfolio() {
+  const data = localStorage.getItem("dataCount");
+  const projectCount = JSON.parse(data);
+  
   const { projects } = useLoaderData();
 
   return (
     <Section>
       <h1>Portfolio</h1>
       <div className="mt-4 grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 2xl:grid-cols-5 gap-5">
-        <Suspense fallback={<SkeletonLoading count="5" />}>
+        <Suspense fallback={<SkeletonLoading count={projectCount.projects} />}>
           <Await resolve={projects}>
             {(projects) =>
               projects.map((project) => (
@@ -32,9 +35,6 @@ async function loadProjects() {
     const response = await axios.get(
       "http://api.birajshrestha.com.np/api/projects"
     );
-
-    console.log(response);
-
     return response.data.data;
   } catch (error) {
     throw new Error("Server Error");

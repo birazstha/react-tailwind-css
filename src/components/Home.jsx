@@ -2,6 +2,8 @@ import Section from "./Section";
 import { motion } from "framer-motion";
 import Services from "./Services";
 import { services } from "../services";
+import { defer } from "react-router-dom";
+import axios from "axios";
 
 export default function Home() {
   return (
@@ -57,7 +59,7 @@ export default function Home() {
                   opacity: { duration: 0.2 },
                   ease: "easeInOut",
                 }}
-                className="bg-primary text-white mt-2 p-1 rounded-full mr-1 w-[200px] h-[45px]"
+                className="bg-primary text-white mt-2 p-1 rounded-full mr-1 w-[200px] h-[45px] hover:bg-[#e74053] duration-100"
               >
                 DOWNLOAD C.V
               </motion.button>
@@ -88,4 +90,20 @@ export default function Home() {
       </Section>
     </>
   );
+}
+
+async function countData() {
+  try {
+    const resData = await axios.get("http://127.0.0.1:8000/api/data-count");
+    const data = resData.data.data;
+    localStorage.setItem("dataCount", JSON.stringify(data));
+  } catch (err) {
+    //
+  }
+}
+
+export function dataCountLoader() {
+  return defer({
+    data: countData(),
+  });
 }
